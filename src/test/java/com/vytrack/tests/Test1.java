@@ -23,9 +23,7 @@ public class Test1 extends TestBase {
         action.moveToElement(events).click().perform();
         System.out.println(driver.getCurrentUrl());
         Thread.sleep(5000);
-
         String actualResult = driver.findElement(By.xpath("//*[@id=\"container\"]/div[2]/div/div/div[1]/div/div/div/div[2]/div")).getText();
-
         Assert.assertEquals(actualResult,"Options");
     }
 
