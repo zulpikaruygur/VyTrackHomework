@@ -16,14 +16,21 @@ public class LoginPage {
             @FindBy(id = "prependedInput"),
             @FindBy(name = "_username")
     })
-    public WebElement username;
+    public WebElement usernameInput;
 
     @FindAll({
             @FindBy(id = "prependedInput2"),
             @FindBy(name = "_password")
     })
-    public WebElement password;
+    public WebElement passwordInput;
 
     @FindBy(id = "_submit")
     public WebElement loginButton;
+
+
+    public void login(String username, String password){
+        usernameInput.sendKeys(username);
+        passwordInput.sendKeys(password);
+        loginButton.click();
+    }
 }
